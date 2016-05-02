@@ -1,10 +1,6 @@
-import got from 'got'
+const got = require('got')
 
-/*
-* Returns `got` wrapped with cache to be used as normal got
-*/
-
-export default function gotCached(config) {
+module.exports = function (config) {
   if (!config.cache) throw Error('cache is a required option')
   const { cache } = config
 
