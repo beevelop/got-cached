@@ -21,7 +21,8 @@ module.exports = function (cache) {
     })
   }
 
-  const cachedGot = function(url, options = {}) {
+  const cachedGot = function(url, options) {
+    options = options || {}
     // return plain got for non-GET requests
     if (options.method && options.method !== 'GET') {
       return got(url, options)
