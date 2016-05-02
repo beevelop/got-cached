@@ -1,8 +1,7 @@
 const got = require('got')
 
-module.exports = function (config) {
-  if (!config.cache) throw Error('cache is a required option')
-  const { cache } = config
+module.exports = function (cache) {
+  if (!cache) throw Error('cache is a required option')
 
   function setCache(key, value, options) {
     if(options.json) value = JSON.stringify(value)
